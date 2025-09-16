@@ -34,7 +34,7 @@ echo "Creating symlink to starship.toml in ~/.config/"
 ln -s $dir/starship.toml ~/.config/
 
 echo "Creating symlink to playerctl-loop in /usr/local/bin"
-sudo ln -s $dir/dwmblocks/scripts/playerctl-loops /usr/local/bin
+sudo ln -s $dir/dwmblocks/scripts/playerctl-loop /usr/local/bin
 
 echo "Creating symlink to .xinitrc in home directory"
 ln -s $dir/.xinitrc ~/
