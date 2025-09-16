@@ -2,11 +2,11 @@
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 	/* {"⌨", "sb-kbselect", 0, 30}, */
-	{"", "scripts/playerctl_music.sh",	0,	11},
-	{"| ", "scripts/sb_internet.sh",	30,	12},
-	{"| ", "scripts/sb_cpu.sh",	         1,  15},
-	{"| ", "scripts/sb_ram.sh",	         1,  14},
-	{"| ", "scripts/sb_timedate.sh",	60,	13},
+	{"", "~/.config/dwmblocks/scripts/playerctl_music.sh",	0,	11},
+	{"| ", "~/.config/dwmblocks/scripts/sb_internet.sh",	30,	12},
+	{"| ", "~/.config/dwmblocks/scripts/sb_cpu.sh",	         1,  15},
+	{"| ", "~/.config/dwmblocks/scripts/sb_ram.sh",	         1,  14},
+	{"| ", "~/.config/dwmblocks/scripts/sb_timedate.sh",	60,	13},
 	
 };
 
