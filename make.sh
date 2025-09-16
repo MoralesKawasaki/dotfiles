@@ -3,7 +3,7 @@
 dir=~/dotfiles
 olddir=~/dotfiles_old
 files="alacritty dwm dwmblocks kitty picom rofi"
-install="alacritty kitty rofi git vim feh playerctl xorg xorg-server xorg-xinit xorg-xrandr yazi pcmanfm ttf-noto-nerd xdg=user-dirs"
+install="alacritty kitty rofi git vim feh playerctl xorg xorg-server xorg-xinit xorg-xrandr yazi pcmanfm ttf-noto-nerd xdg-user-dirs"
 aur="picom-git librewolf-bin"
 
 echo -n "Installing all official and AUR packages ..."
@@ -33,10 +33,12 @@ echo "done"
 echo "Creating symlink to starship.toml in ~/.config/"
 ln -s $dir/starship.toml ~/.config/
 
+echo "Creating symlink to playerctl-loop in /usr/local/bin"
+sudo ln -s $dir/dwmblocks/scripts/playerctl-loops /usr/local/bin
+
 echo "Creating symlink to .xinitrc in home directory"
 ln -s $dir/.xinitrc ~/
 
 echo "Creating xdg directories and copying wallpapers to ~/Pictures"
 xdg-user-dirs-update
 cp $dir/Wallpapers/* ~/Pictures/
-echo "done"

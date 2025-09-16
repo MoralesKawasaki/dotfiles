@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -z "$MUSIC_PLAYING_PLAYERS" ]; then
-	# if MUSIC_PLAYING_PLAYERS is not set, use the default players
-	MUSIC_PLAYING_PLAYERS="mpd mpv firefox"
-fi
-
-for PLAYER in $MUSIC_PLAYING_PLAYERS; do
-    playerctl --player=$PLAYER metadata title > /dev/null >/dev/null && kill -45 "$(pidof "${STATUSBAR:-dwmblocks}")" || break
+playerctl --all-players --follow metadata title | while read -r title; do
+	kill -45 "$(pidof "${STATUSBAR:-dwmblocks}")"
 done
 
