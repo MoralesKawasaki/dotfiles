@@ -1,0 +1,142 @@
+@import "colors/matugen.css";
+
+* {
+    border: none;
+    border-radius: 50px;
+    font-family: "SF Pro Display", "NotoSansM Nerd Font Propo", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    min-height: 0;
+}
+
+.modules-right {
+    margin-right: 15px;
+}
+
+.modules-left {
+    margin-left: 15px;
+}
+
+#workspaces,
+#custom-launcher,
+#clock,
+#custom-notification,
+#custom-media,
+#custom-pacman,
+#custom-weather,
+#pulseaudio,
+#battery,
+#network,
+#power-profiles-daemon {
+    background-color: @surface;
+    color: @primary;
+    margin-right: 10px;
+    padding: 0 10px;
+    border: 2px solid @primary_fixed_dim;
+}
+
+#network {
+    margin-right: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+  background: @background;
+  border-radius: 28px;
+  border: 2px solid @primary;
+}
+tooltip label {
+  color: @on_background;
+  margin: 4px;
+  padding: 4px;
+}
+
+#workspaces {
+  padding: 6px 5px;
+  border-radius: 16px;
+  min-width: 210px;
+  color: @primary;
+}
+
+#workspaces button {
+  padding: 0px 6px;
+  margin: 0px 3px;
+  border-radius: 50px;
+  color: transparent;
+  background: @primary_container;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:first-child {
+  margin-left: 5px;
+}
+
+#workspaces button.active {
+  background: linear-gradient(135deg, @primary 25%, @secondary 45%, @tertiary 85%);
+  color: @on_primary;
+  min-width: 50px;
+  transition: all 0.3s ease-in-out;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+button:hover {
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (white) */
+  transition: none; /* Disable predefined animations */
+}
+
+#workspaces button:hover {
+  background: linear-gradient(135deg, @primary_container 25%, @secondary_container 45%, @tertiary_container 85%);
+  color: @on_primary;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  min-width: 50px;
+  background-size: 100% 100%;
+}
+
+#workspaces button.urgent {
+  background-color: @error;
+  color: @on_error;
+  border-radius: 16px;
+  min-width: 50px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+}
+
+#custom-launcher {
+  padding: 0 12px;
+}
+
+#custom-media {
+  padding: 0 10px;
+}
+
+#custom-weather {
+  padding: 0 12px;
+}
+
+#custom-notification {
+  padding: 0 9px;
+}
+
+#custom-pacman {
+  padding: 0 10px;
+}
+
+#network {
+  padding: 0 8px;
+}
+
+#pulseaudio {
+  padding: 0 10px;
+}
+
+#clock {
+  padding: 0 12px;
+  font-weight: bold;
+}
