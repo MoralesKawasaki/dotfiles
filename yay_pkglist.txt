@@ -2,3 +2,5 @@ python-pywalfox
 matugen-bin
 librewolf-bin
 noto-color-emoji-fontconfig
+hyprlock
+wlogout

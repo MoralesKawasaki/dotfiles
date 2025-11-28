@@ -14,7 +14,7 @@ mkdir -p $olddir
 cd $DOTFILES_ROOT
 
 mkdir -p $olddir/.config
-config_files="hypr kitty rofi matugen nwg-look swaync Vencord waybar gtk-3.0 gtk-4.0"
+config_files="hypr kitty rofi matugen nwg-look swaync Vencord waybar gtk-3.0 gtk-4.0 wlogout"
 for file in $config_files; do
 	check_dir=~/.config/$file
 	if [ -d "$check_dir" ] || [ -L "$check_dir " ] ; then
@@ -40,7 +40,7 @@ for file in $cache_files; do
 done
 
 mkdir -p $olddir/.local
-local_files="bin"
+local_files="bin share/applications"
 for file in $local_files; do
 	check_dir=~/.local/$file
 	if [ -d "$check_dir" ] || [ -L "$check_dir " ] ; then
@@ -61,18 +61,20 @@ sudo chmod +x ~/.config/waybar/scripts/reload.sh
 echo "## Done."
 echo ""
 
-if [ -f "~/.bash_profile" ] || [ -L "bash_profile" ] ; then
+if [ -f "$HOME/.bash_profile" ] || [ -L "$HOME/.bash_profile" ] ; then
 	    echo "## Moving already existing .bash_profile from ~/.bash_profile to $olddir/.bash_profile"
-		mv ~/.bash_profile $olddir
-		ln -s $DOTFILES_ROOT/.bash_profile ~/
+		mv $HOME/.bash_profile $olddir/.bash_profile
 	fi
+echo "## Symlinking for .bash_profile to Home directory."
+ln -s $DOTFILES_ROOT/.bash_profile ~/.bash_profile
+echo ""
 
-
-if [ -f "~/.bashrc" ] || [ -L ".bashrc" ] ; then
+if [ -f "$HOME/.bashrc" ] || [ -L "$HOME/.bashrc" ] ; then
 	    echo "## Moving already existing .bashrc from ~/.bashrc to $olddir/.bashrc"
-		mv ~/.bash_profile $olddir
-		ln -s $DOTFILES_ROOT/.bashrc ~/
+		mv $HOME/.bashrc $olddir/.bashrc
 	fi
+echo "## Symlinking for .bashrc to Home directory."
+ln -s $DOTFILES_ROOT/.bashrc ~/.bashrc
 echo ""
 
 echo "## Creating XDG direxctories!"

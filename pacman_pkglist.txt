@@ -25,4 +25,5 @@ adw-gtk-theme
 gvfs
 xdg-user-dirs
 tumbler
+hypridle
 
