@@ -26,4 +26,5 @@ gvfs
 xdg-user-dirs
 tumbler
 hypridle
+jq
 
